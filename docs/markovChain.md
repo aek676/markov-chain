@@ -196,17 +196,18 @@ $$
 
 Si un miercoles está nublado, ¿cuál es la probabilidad de que el viernes siguiente haga sol?
 
-- Calculamos la matriz de transición en dos pasos,
-  $$
-  \boxed{
-  P^2 = \begin{pmatrix}
-  0.67 & 0.33 \\
-  0.66 & 0.34
-  \end{pmatrix}
-  }
-  \Longrightarrow
-  \text{Probabilidad pedida es } 0.66
-  $$
+- Calculamos la matriz de transición en dos pasos:
+
+$$
+\boxed{
+P^2 = \begin{pmatrix}
+0.67 & 0.33 \\
+0.66 & 0.34
+\end{pmatrix}
+\Longrightarrow
+\text{Probabilidad pedida es } 0.66
+}
+$$ 
 
 ## Vector de probabilidades iniciales
 
@@ -215,8 +216,8 @@ Si un miercoles está nublado, ¿cuál es la probabilidad de que el viernes sigu
 $$
 \boxed{
 \begin{gathered}
-w = (w_1, w_2, \ldots, w_k) \text{ se llama } \textbf{vector de probabilidades} \text{ si} \\[0.5em]
-\bullet \quad w_i \geq 0 \text{ para } i = 1, 2, \ldots, k \text{ y } \\[0.5em]
+w = (w_1, w_2, \ldots, w_k) \text{ se llama } \textbf{vector de probabilidades} \text{ si} \\
+\bullet \quad w_i \geq 0 \text{ para } i = 1, 2, \ldots, k \text{ y } \\
 \bullet \quad \sum_{i=1}^{k} w_i = 1
 \end{gathered}
 }
@@ -277,23 +278,15 @@ Calcular:
 
 ### Solución
 
-1. Miercoles: $v = (0.2, 0.8) \Longrightarrow w = vP = (0.62, 0.38)$
+1. Miercoles: $v = (0.2, 0.8) \Longrightarrow w = vP = (0.62, 0.38)$  
 
-   $$
-   \boxed{
-    P [\text{esté nublado el jueves}] = 0.38
-   }
-   $$
+$$\boxed{P [\text{esté nublado el jueves}] = 0.38}$$  
 
-2. $w = vP = (0.62, 0.38) \Longrightarrow vP^2= vPP = wP = (0.662, 0.338)$
+2. $w = vP = (0.62, 0.38) \Longrightarrow vP^2= vPP = wP = (0.662, 0.338)$  
 
-   $$
-   \boxed{
-    P [\text{esté nublado el viernes}] = 0.338
-   }
-   $$
+$$\boxed{P [\text{esté nublado el viernes}] = 0.338}$$  
 
-3. $vP^{2} = (0.662, 0.338) \Longrightarrow vP^{3} = vP^{2}P = (0.6662, 0.3338)$
+4. $vP^{2} = (0.662, 0.338) \Longrightarrow vP^{3} = vP^{2}P = (0.6662, 0.3338)$
 
 $$
 \boxed{P[\text{ esté nublado el sábado }] = 0.3338}
@@ -320,21 +313,13 @@ P = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-- Si las cinco líneas están ocupadas en un instante de tiempo concreto.
+- Si las cinco líneas están ocupadas en un instante de tiempo concreto.  
 
-  $$
-  \boxed{
-    P\text{[Exactamente 4 líneas ocupadas en el siguiente instante de tiempo]}=p_{65}=0.4
-  }
-  $$
+$$\boxed{P\text{[Exactamente 4 líneas ocupadas en el siguiente instante de tiempo]}=p_{65}=0.4}$$
 
-- Si en un instante de tiempo no hay ninguna línea ocupada.
+- Si en un instante de tiempo no hay ninguna línea ocupada.  
 
-  $$
-  \boxed{
-    P\text{[Al menos una línea ocupada en el siguiente instante de tiempo]}=1−p_{11}=0.9
-  }
-  $$
+$$\boxed{P\text{[Al menos una línea ocupada en el siguiente instante de tiempo]}=1−p_{11}=0.9}$$
 
 #### Matriz de transición en dos pasos
 
@@ -376,56 +361,28 @@ P^3 = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-- Si las 5 líneas están ocupadas en un instante de tiempo concreto.
+- Si las 5 líneas están ocupadas en un instante de tiempo concreto.  
 
-  $$
-  \boxed{
-    P[\text{No hay líneas ocupadas tres instantes después}] = 0.116
-  }
-  $$
+$$\boxed{P[\text{No hay líneas ocupadas tres instantes después}] = 0.116}$$  
 
-- Si una línea está ocupada en un instante de tiempo.
+- Si una línea está ocupada en un instante de tiempo.  
 
-  $$
-  \boxed{
-    P[\text{Tres instantes después haya de nuevo una línea ocupada}] = 0.207
-  }
-  $$
+$$\boxed{P[\text{Tres instantes después haya de nuevo una línea ocupada}] = 0.207}$$  
 
-- Al inicio del proceso de observación (instante $n = 1$)
+- Al inicio del proceso de observación (instante $n = 1$)  
 
-  $$
-  \boxed{
-  P [ \text{No haya líneas ocupadas}] = 0.5
-  }
-  $$
+$$\boxed{P [ \text{No haya líneas ocupadas}] = 0.5}$$  
 
-  $$
-  \boxed{P [ \text{Haya una línea ocupada}] = 0.3}
-  $$
+$$\boxed{P [ \text{Haya una línea ocupada}] = 0.3}$$  
 
-  $$
-  \boxed{P [ \text{Haya dos líneas ocupadas}] = 0.2}
-  $$
+$$\boxed{P [ \text{Haya dos líneas ocupadas}] = 0.2}$$  
 
-  $$
-  \boxed{
-   \text{Vector de probabilidades iniciales: }v =(0.5,0.3,0.2,0,0,0)
-   }
-  $$
+$$\boxed{\text{Vector de probabilidades iniciales: }v =(0.5,0.3,0.2,0,0,0)}$$  
 
-- $vP =(0.13, 0.33, 0.22, 0.12, 0.1, 0.1)$
+- $vP =(0.13, 0.33, 0.22, 0.12, 0.1, 0.1)$  
 
-  $$
-  \boxed{
-    P[\text{No haya líneas ocupadas en el instante 2}] = 0.13
-  }
-  $$
+$$\boxed{P[\text{No haya líneas ocupadas en el instante 2}] = 0.13}$$  
 
-- $vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12)$
+- $vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12)$  
 
-  $$
-    \boxed{
-      P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202
-    }
-  $$
+$$\boxed{P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202}$$  
