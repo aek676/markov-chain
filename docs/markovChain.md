@@ -5,11 +5,11 @@
 Una sucesión de observaciones $X_1, X_2, \ldots$ se denomina **proceso estocástico** cuando:
 
 - Si los valores de estas observaciones no se pueden predecir exactamente
-- Pero se pueden especificar las probabiliddades para los distintos valores posibles en cualquier instante de tiempo
+- Pero se pueden especificar las probabilidades para los distintos valores posibles en cualquier instante de tiempo
 
   $$\boxed{X_1:\ \text{v.a. que define el \textbf{estado inicial del proceso}}}$$
 
-  $$\boxed{X_n:\ \text{v.a. que define el \textbf{estado del proceso en el instante de timepo} n}}$$
+  $$\boxed{X_n:\ \text{v.a. que define el \textbf{estado del proceso en el instante de tiempo} n}}$$
 
 Para cada posible valor del estado inicial $s_1$ y para cada uno de los sucesivos
 valores $s_n$ de los estados $X_n$, $n =2,3,...,$ especificamos:
@@ -85,7 +85,7 @@ Es la probabilidad condicionada
 
 $$\boxed{P(X_{n+1} = s_j | X_n = s_i)}$$
 
-### Probabilidad de transisción estacionaria
+### Probabilidad de transición estacionaria
 
 Una cadena de Markov tiene **probabilidades de transición estacionarias** si para cualquier par de estados $s_i$ y $s_j$ existe una probabilidad de transición $p_{ij}$ tal que
 
@@ -161,11 +161,11 @@ $$\Huge \Downarrow$$
 
 $$
 \boxed{
-\begin{array}{r l}
-\bullet & p_{ij}^{(2)} : \text{ Elemento de la } i\text{-ésima fila y } j\text{-ésima columna de la matriz } P^2 \\[6pt]
-\bullet & P^m : \text{ Potencia } m\text{-ésima de } P, \text{ con } (m = 2, 3, \ldots) \\[6pt]
-\bullet & p_{ij}^{(m)} : \text{ Elemento de la fila } i \text{ y de la columna } j \text{ de la matriz } P^m
-\end{array}
+\begin{aligned}
+\bullet \quad & p_{ij}^{(2)} : \text{ Elemento de la } i\text{-ésima fila y } j\text{-ésima columna de la matriz } P^2 \\[6pt]
+\bullet \quad & P^m : \text{ Potencia } m\text{-ésima de } P, \text{ con } (m = 2, 3, \ldots) \\[6pt]
+\bullet \quad & p_{ij}^{(m)} : \text{ Elemento de la fila } i \text{ y de la columna } j \text{ de la matriz } P^m
+\end{aligned}
 }
 $$
 
@@ -212,11 +212,15 @@ Si un miercoles está nublado, ¿cuál es la probabilidad de que el viernes sigu
 
 ### Vector de probabilidades
 
-$
-w = (w_1, w_2, \ldots, w_k) \text{ se llama } \textbf{vector de probabilidades} \text{ si} \\
-\bullet \quad w_i \geq 0 \text{ para } i = 1, 2, \ldots, k \text{ y } \\
+$$
+\boxed{
+\begin{gathered}
+w = (w_1, w_2, \ldots, w_k) \text{ se llama } \textbf{vector de probabilidades} \text{ si} \\[0.5em]
+\bullet \quad w_i \geq 0 \text{ para } i = 1, 2, \ldots, k \text{ y } \\[0.5em]
 \bullet \quad \sum_{i=1}^{k} w_i = 1
-$
+\end{gathered}
+}
+$$
 
 Consideramos una cadena de Markov con:
 
@@ -305,7 +309,7 @@ Sea $b_1$ el estado en el que están utilizando exactamente $i$ líneas, en un i
 
 #### Matriz de transición P
 
-$
+$$
 P = \begin{pmatrix}
  0.1 & 0.4 & 0.2 & 0.1 & 0.1 & 0.1 \\
  0.2 & 0.3 & 0.2 & 0.1 & 0.1 & 0.1 \\
@@ -314,7 +318,7 @@ P = \begin{pmatrix}
  0.1 & 0.1 & 0.1 & 0.2 & 0.3 & 0.2 \\
  0.1 & 0.1 & 0.1 & 0.1 & 0.4 & 0.2
 \end{pmatrix}
-$
+$$
 
 - Si las cinco líneas están ocupadas en un instante de tiempo concreto.
 
@@ -334,7 +338,7 @@ $
 
 #### Matriz de transición en dos pasos
 
-$
+$$
 P^2 = \begin{pmatrix}
   0.14 & 0.23 & 0.2 & 0.15 & 0.16 & 0.12 \\
  0.13 & 0.24 & 0.2 & 0.15 & 0.16 & 0.12 \\
@@ -343,7 +347,7 @@ P^2 = \begin{pmatrix}
  0.11 & 0.16 & 0.16 & 0.18 & 0.24 & 0.15 \\
  0.11 & 0.16 & 0.15 & 0.17 & 0.25 & 0.16 \\
 \end{pmatrix}
-$
+$$
 
 - Si dos líneas están ocupadas en un instante de tiempo concreto.
 
@@ -361,7 +365,7 @@ $$
 }
 $$
 
-$
+$$
 P^3 = \begin{pmatrix}
    0.123 & 0.208 & 0.192 & 0.166 & 0.183 & 0.128 \\
    0.124 & 0.207 & 0.192 & 0.166 & 0.183 & 0.128 \\
@@ -370,7 +374,7 @@ P^3 = \begin{pmatrix}
    0.116 & 0.181 & 0.177 & 0.176 & 0.211 & 0.139 \\
    0.116 & 0.180 & 0.174 & 0.174 & 0.215 & 0.141 \\
 \end{pmatrix}
-$
+$$
 
 - Si las 5 líneas están ocupadas en un instante de tiempo concreto.
 
@@ -410,19 +414,18 @@ $
    }
   $$
 
-- $vP =(0.13, 0.33, 0.22, 0.12, 0.1, 0.1) \Longrightarrow$
+- $vP =(0.13, 0.33, 0.22, 0.12, 0.1, 0.1)$
+
   $$
   \boxed{
     P[\text{No haya líneas ocupadas en el instante 2}] = 0.13
   }
   $$
 
-$vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12) \Longrightarrow$
+- $vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12)$
 
-$$
-  \boxed{
-    P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202
-  }
-$$
-
-
+  $$
+    \boxed{
+      P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202
+    }
+  $$
