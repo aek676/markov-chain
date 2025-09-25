@@ -162,8 +162,8 @@ $$\Huge \Downarrow$$
 $$
 \boxed{
 \begin{aligned}
-\bullet \quad & p_{ij}^{(2)} : \text{ Elemento de la } i\text{-ésima fila y } j\text{-ésima columna de la matriz } P^2 \\[6pt]
-\bullet \quad & P^m : \text{ Potencia } m\text{-ésima de } P, \text{ con } (m = 2, 3, \ldots) \\[6pt]
+\bullet \quad & p_{ij}^{(2)} : \text{ Elemento de la } i\text{-ésima fila y } j\text{-ésima columna de la matriz } P^2 \\
+\bullet \quad & P^m : \text{ Potencia } m\text{-ésima de } P, \text{ con } (m = 2, 3, \ldots) \\
 \bullet \quad & p_{ij}^{(m)} : \text{ Elemento de la fila } i \text{ y de la columna } j \text{ de la matriz } P^m
 \end{aligned}
 }
