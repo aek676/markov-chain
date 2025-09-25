@@ -416,3 +416,13 @@ $
     P[\text{No haya líneas ocupadas en el instante 2}] = 0.13
   }
   $$
+
+$vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12) \Longrightarrow$
+
+$$
+  \boxed{
+    P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202
+  }
+$$
+
+
