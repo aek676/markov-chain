@@ -21,7 +21,7 @@ pub fn teleportation_model(mtx: &SquareMatrix, alpha: f64) -> SquareMatrix {
 pub fn calc_eigenvector(mtx: &SquareMatrix) -> Vec<f64> {
     let mut eigenvector = vec![0.0; mtx.size];
 
-    let mut substracted_matrix = substract_identity(&mtx);
+    let mut substracted_matrix = substract_identity(mtx);
 
     substracted_matrix
         .data

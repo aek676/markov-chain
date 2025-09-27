@@ -32,10 +32,6 @@ impl SquareMatrix {
             data: vec![vec![0.0; n]; n],
         }
     }
-
-    pub fn size(&self) -> usize {
-        self.size
-    }
 }
 
 impl fmt::Display for SquareMatrix {

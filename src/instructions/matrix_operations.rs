@@ -1,15 +1,5 @@
 use crate::square_matrix::SquareMatrix;
 
-pub fn scale_matrix(mtx: &SquareMatrix, scalar: f64) -> SquareMatrix {
-    let result = mtx
-        .data
-        .iter()
-        .map(|row| row.iter().map(|&element| element * scalar).collect())
-        .collect();
-
-    SquareMatrix::new(result)
-}
-
 pub fn substract_identity(mtx: &SquareMatrix) -> SquareMatrix {
     let mut result = mtx.data.clone();
     for (i, row) in result.iter_mut().enumerate() {
