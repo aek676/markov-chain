@@ -1,4 +1,23 @@
-use std::{fmt, vec};
+use std::error::Error;
+use std::fmt;
+
+#[derive(Debug)]
+pub enum CreationError {
+    EmptyMatrix,
+    NonSquareMatrix,
+}
+
+impl fmt::Display for CreationError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let description = match *self {
+            CreationError::EmptyMatrix => "matrix is empty",
+            CreationError::NonSquareMatrix => "matrix is not square",
+        };
+        f.write_str(description)
+    }
+}
+
+impl Error for CreationError {}
 
 pub struct SquareMatrix {
     pub data: Vec<Vec<f64>>,
@@ -6,24 +25,15 @@ pub struct SquareMatrix {
 }
 
 impl SquareMatrix {
-    pub fn new(data: Vec<Vec<f64>>) -> Self {
-        if data.is_empty() {
-            return Self {
-                data: vec![],
-                size: 0,
-            };
+    pub fn new(data: Vec<Vec<f64>>) -> Result<Self, CreationError> {
+        match data {
+            x if x.is_empty() => Err(CreationError::EmptyMatrix),
+            x if x.len() != x[0].len() => Err(CreationError::NonSquareMatrix),
+            x => {
+                let size = x.len();
+                Ok(Self { data: x, size })
+            }
         }
-        let size = data.len();
-
-        let data = data
-            .into_iter()
-            .map(|mut row| {
-                row.resize(size, 0.0);
-                row
-            })
-            .collect::<Vec<_>>();
-
-        Self { data, size }
     }
 
     pub fn zeros(n: usize) -> Self {

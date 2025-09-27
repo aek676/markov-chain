@@ -1,6 +1,6 @@
-use crate::square_matrix::SquareMatrix;
+use crate::square_matrix::{CreationError, SquareMatrix};
 
-pub fn substract_identity(mtx: &SquareMatrix) -> SquareMatrix {
+pub fn substract_identity(mtx: &SquareMatrix) -> Result<SquareMatrix, CreationError> {
     let mut result = mtx.data.clone();
     for (i, row) in result.iter_mut().enumerate() {
         row[i] -= 1.0;
