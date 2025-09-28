@@ -42,4 +42,24 @@ fn test_square_matrix_creation_valid() {
     );
 }
 
+#[test]
+fn test_square_matrix_zeros_error() {
+    let mtx = SquareMatrix::zeros(0);
+    assert_eq!(mtx, Err(CreationError::InvalidSize));
+}
 
+#[test]
+fn test_square_matrix_zeros() {
+    let mtx = SquareMatrix::zeros(3);
+    assert_eq!(
+        mtx,
+        Ok(SquareMatrix {
+            data: vec![
+                vec![0.0, 0.0, 0.0],
+                vec![0.0, 0.0, 0.0],
+                vec![0.0, 0.0, 0.0]
+            ],
+            size: 3
+        })
+    );
+}
