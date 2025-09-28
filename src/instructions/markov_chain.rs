@@ -18,9 +18,7 @@ pub fn teleportation_model(mtx: &SquareMatrix, alpha: f64) -> Result<SquareMatri
     SquareMatrix::new(result)
 }
 
-pub fn calc_eigenvector(mtx: &SquareMatrix) -> Result<Vec<f64>, CreationError> {
-    let mut eigenvector = vec![0.0; mtx.size];
-
+pub fn calc_eigenvector(mtx: &SquareMatrix) -> Result<Vec<f64>, Box<dyn std::error::Error>> {
     let mut subtracted_matrix = substract_identity(mtx)?;
 
     subtracted_matrix
@@ -28,11 +26,5 @@ pub fn calc_eigenvector(mtx: &SquareMatrix) -> Result<Vec<f64>, CreationError> {
         .iter_mut()
         .for_each(|row| *row.last_mut().unwrap() = 1.0);
 
-    if let Some(inv) = inverse(&subtracted_matrix) {
-        eigenvector = inv.data.last().unwrap().clone();
-    } else {
-        println!("Inverse Matrix: Matrix is not invertible");
-    }
-
-    Ok(eigenvector)
+    Ok(inverse(&subtracted_matrix)?.data.last().unwrap().clone())
 }
