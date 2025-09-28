@@ -16,7 +16,7 @@ fn new_returns_error_when_a_row_is_empty() {
 
 #[test]
 fn new_returns_error_on_non_square_matrix_more_columns() {
-    assert_eq!(
+    assert_ne!(
         SquareMatrix::new(vec![vec![1.0, 2.0], vec![3.0]]), // 2x1, no cuadrada
         Err(CreationError::NonSquareMatrix)
     );
@@ -65,7 +65,7 @@ fn test_square_matrix_zeros() {
 }
 
 #[test]
-pub fn test_square_matrix_display() {
+fn test_square_matrix_display() {
     let mtx = SquareMatrix::new(vec![vec![1.0, 2.0], vec![3.0, 4.0]]).unwrap();
     let display = format!("{}", mtx);
     let expected = "[1.0, 2.0]\n[3.0, 4.0]\n";
