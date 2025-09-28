@@ -63,3 +63,29 @@ fn test_square_matrix_zeros() {
         })
     );
 }
+
+#[test]
+pub fn test_square_matrix_display() {
+    let mtx = SquareMatrix::new(vec![vec![1.0, 2.0], vec![3.0, 4.0]]).unwrap();
+    let display = format!("{}", mtx);
+    let expected = "[1.0, 2.0]\n[3.0, 4.0]\n";
+    assert_eq!(display, expected);
+}
+
+#[test]
+fn test_creation_error_display() {
+    let err = CreationError::EmptyMatrix;
+    assert_eq!(format!("{}", err), "matrix is empty");
+}
+
+#[test]
+fn test_creation_error_non_square_display() {
+    let err = CreationError::NonSquareMatrix;
+    assert_eq!(format!("{}", err), "matrix is not square");
+}
+
+#[test]
+fn test_creation_error_invalid_size_display() {
+    let err = CreationError::InvalidSize;
+    assert_eq!(format!("{}", err), "matrix has invalid size");
+}
