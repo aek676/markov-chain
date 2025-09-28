@@ -21,7 +21,7 @@ impl fmt::Display for CreationError {
 
 impl Error for CreationError {}
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub struct SquareMatrix {
     pub data: Vec<Vec<f64>>,
     pub size: usize,

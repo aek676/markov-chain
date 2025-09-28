@@ -88,7 +88,6 @@ pub fn inverse(mtx: &SquareMatrix) -> Result<SquareMatrix, Box<dyn Error>> {
     let n = mtx.size;
     let det = determinant(mtx, n)?;
     if det == 0.0 {
-        println!("Singular matrix, can't find its inverse");
         return Err(Box::new(OperationError::SingularMatrix));
     }
 

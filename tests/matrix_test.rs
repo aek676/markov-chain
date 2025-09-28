@@ -1,5 +1,3 @@
-use std::vec;
-
 use markov_chain::collections::{CreationError, SquareMatrix};
 
 #[test]
@@ -16,7 +14,7 @@ fn new_returns_error_when_a_row_is_empty() {
 
 #[test]
 fn new_returns_error_on_non_square_matrix_more_columns() {
-    assert_ne!(
+    assert_eq!(
         SquareMatrix::new(vec![vec![1.0, 2.0], vec![3.0]]), // 2x1, no cuadrada
         Err(CreationError::NonSquareMatrix)
     );
