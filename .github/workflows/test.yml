@@ -39,9 +39,13 @@ jobs:
       - name: Generate coverage report
         run: |
           ./grcov . --binary-path ./target/debug/ -s . -t lcov --branch --ignore-not-existing --ignore "/*" -o lcov.info
+          ./grcov . --binary-path ./target/debug/ -s . -t html --branch --ignore-not-existing --ignore "/*" -o coverage-html/
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Upload coverage reports as artifacts
+        uses: actions/upload-artifact@v4
         with:
-          file: ./lcov.info
-          fail_ci_if_error: true
+          name: coverage-reports
+          path: |
+            lcov.info
+            coverage-html/
+          retention-days: 30
