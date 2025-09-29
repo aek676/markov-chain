@@ -32,15 +32,15 @@ fn main() -> Result<(), Box<dyn Error>> {
 fn main() -> Result<(), Box<dyn Error>> {
     let text = "I love cats. Cats are my favorite animal. I have two cats.";
 
-    let text = text
+    let text_tokenized = text
         .to_lowercase()
         .chars()
         .filter(|c| c.is_alphanumeric() || c.is_whitespace())
         .collect::<String>();
 
-    println!("Input text: {}", text);
+    println!("Input text: {}", text_tokenized);
 
-    let words = text.split_whitespace().collect::<Vec<&str>>();
+    let words = text_tokenized.split_whitespace().collect::<Vec<&str>>();
 
     println!("Words: {:?}", words);
 
@@ -107,5 +107,63 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     println!("Generated text: {}", generated_text);
 
+    let texto = "Hola, Mundo!\nTengo 2 manzanas y 3 peras.";
+    let tokens = tokenize(text);
+    println!("{:?}", tokens);
+
+    let model = build_model(&tokens);
+
+    println!("Model Transition Matrix: \n{}", model);
+
     Ok(())
+}
+
+fn tokenize(text: &str) -> Vec<String> {
+    text.lines() // divide en líneas
+        .flat_map(|line| {
+            line.to_lowercase() // minúsculas
+                .chars()
+                .map(|c| {
+                    if c.is_alphabetic() || c.is_whitespace() {
+                        c
+                    } else {
+                        ' ' // reemplaza cualquier símbolo por espacio
+                    }
+                })
+                .collect::<String>() // reconstruye la línea limpia
+                .split_whitespace() // divide en palabras
+                .map(|w| w.to_string()) // convierte a String
+                .collect::<Vec<String>>()
+        })
+        .collect()
+}
+
+fn build_model(tokens: &[String]) -> SquareMatrix {
+    let unique_words: Vec<&String> = {
+        let mut set = HashSet::new();
+        for word in tokens {
+            set.insert(word);
+        }
+        set.into_iter().collect()
+    };
+
+    let mut mtx_transition = SquareMatrix::zeros(unique_words.len()).unwrap();
+
+    for (i, word) in unique_words.iter().enumerate() {
+        for (j, next_word) in unique_words.iter().enumerate() {
+            mtx_transition.data[i][j] = tokens
+                .windows(2)
+                .filter(|w| w[0] == **word && w[1] == **next_word)
+                .count() as f64;
+        }
+    }
+
+    mtx_transition.data.iter_mut().for_each(|row| {
+        let row_sum: f64 = row.iter().sum();
+        if row_sum > 0.0 {
+            row.iter_mut().for_each(|val| *val /= row_sum);
+        }
+    });
+
+    mtx_transition
 }
