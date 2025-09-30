@@ -207,7 +207,7 @@ P^2 = \begin{pmatrix}
 \Longrightarrow
 \text{Probabilidad pedida es } 0.66
 }
-$$ 
+$$
 
 ## Vector de probabilidades iniciales
 
@@ -278,13 +278,13 @@ Calcular:
 
 ### Solución
 
-1. Miercoles: $v = (0.2, 0.8) \Longrightarrow w = vP = (0.62, 0.38)$  
+1. Miercoles: $v = (0.2, 0.8) \Longrightarrow w = vP = (0.62, 0.38)$
 
-$$\boxed{P [\text{esté nublado el jueves}] = 0.38}$$  
+$$\boxed{P [\text{esté nublado el jueves}] = 0.38}$$
 
-2. $w = vP = (0.62, 0.38) \Longrightarrow vP^2= vPP = wP = (0.662, 0.338)$  
+2. $w = vP = (0.62, 0.38) \Longrightarrow vP^2= vPP = wP = (0.662, 0.338)$
 
-$$\boxed{P [\text{esté nublado el viernes}] = 0.338}$$  
+$$\boxed{P [\text{esté nublado el viernes}] = 0.338}$$
 
 4. $vP^{2} = (0.662, 0.338) \Longrightarrow vP^{3} = vP^{2}P = (0.6662, 0.3338)$
 
@@ -313,11 +313,11 @@ P = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-- Si las cinco líneas están ocupadas en un instante de tiempo concreto.  
+- Si las cinco líneas están ocupadas en un instante de tiempo concreto.
 
 $$\boxed{P\text{[Exactamente 4 líneas ocupadas en el siguiente instante de tiempo]}=p_{65}=0.4}$$
 
-- Si en un instante de tiempo no hay ninguna línea ocupada.  
+- Si en un instante de tiempo no hay ninguna línea ocupada.
 
 $$\boxed{P\text{[Al menos una línea ocupada en el siguiente instante de tiempo]}=1−p_{11}=0.9}$$
 
@@ -361,28 +361,157 @@ P^3 = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-- Si las 5 líneas están ocupadas en un instante de tiempo concreto.  
+- Si las 5 líneas están ocupadas en un instante de tiempo concreto.
 
-$$\boxed{P[\text{No hay líneas ocupadas tres instantes después}] = 0.116}$$  
+$$\boxed{P[\text{No hay líneas ocupadas tres instantes después}] = 0.116}$$
 
-- Si una línea está ocupada en un instante de tiempo.  
+- Si una línea está ocupada en un instante de tiempo.
 
-$$\boxed{P[\text{Tres instantes después haya de nuevo una línea ocupada}] = 0.207}$$  
+$$\boxed{P[\text{Tres instantes después haya de nuevo una línea ocupada}] = 0.207}$$
 
-- Al inicio del proceso de observación (instante $n = 1$)  
+- Al inicio del proceso de observación (instante $n = 1$)
 
-$$\boxed{P [ \text{No haya líneas ocupadas}] = 0.5}$$  
+$$\boxed{P [ \text{No haya líneas ocupadas}] = 0.5}$$
 
-$$\boxed{P [ \text{Haya una línea ocupada}] = 0.3}$$  
+$$\boxed{P [ \text{Haya una línea ocupada}] = 0.3}$$
 
-$$\boxed{P [ \text{Haya dos líneas ocupadas}] = 0.2}$$  
+$$\boxed{P [ \text{Haya dos líneas ocupadas}] = 0.2}$$
 
-$$\boxed{\text{Vector de probabilidades iniciales: }v =(0.5,0.3,0.2,0,0,0)}$$  
+$$\boxed{\text{Vector de probabilidades iniciales: }v =(0.5,0.3,0.2,0,0,0)}$$
 
-- $vP =(0.13, 0.33, 0.22, 0.12, 0.1, 0.1)$  
+- $vP =(0.13, 0.33, 0.22, 0.12, 0.1, 0.1)$
 
-$$\boxed{P[\text{No haya líneas ocupadas en el instante 2}] = 0.13}$$  
+$$\boxed{P[\text{No haya líneas ocupadas en el instante 2}] = 0.13}$$
 
-- $vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12)$  
+- $vP^2 = vPP = (0.1333, 0.227, 0.202, 0.156, 0.162, 0.12)$
 
-$$\boxed{P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202}$$  
+$$\boxed{P[\text{Haya 2 líneas ocupadas en el instante 3}] = 0.202}$$
+
+## Distribucion estacionaria
+
+Una distribución de probabilidad $\pi = (\pi_1, \pi_2, \ldots, \pi_k)$ es una **distribución estacionaria** de una cadena de Markov con matriz de transición $P$ si
+$$\boxed{\pi P = \pi}$$
+con
+$$\boxed{\pi_1 + \pi_2 + \ldots + \pi_k = 1}$$
+
+### Ejemplo
+
+Calcular la distribución estacionaria de la cadena de Markov del locutorio telefónico con matriz de transición
+
+$$
+P = \begin{pmatrix}
+ 0.1 & 0.4 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.2 & 0.3 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.1 & 0.2 & 0.3 & 0.2 & 0.1 & 0.1 \\
+ 0.1 & 0.1 & 0.2 & 0.3 & 0.2 & 0.1 \\
+ 0.1 & 0.1 & 0.1 & 0.2 & 0.3 & 0.2 \\
+ 0.1 & 0.1 & 0.1 & 0.1 & 0.4 & 0.2
+\end{pmatrix}
+$$
+
+La distribución estacionaria $/pi = (\pi_1, \pi_2, \pi_3, \pi_4, \pi_5, \pi_6)$, cumpliendo que $/pi P = /pi$, esto es:
+
+$$
+\begin{pmatrix}
+\pi_1, \pi_2, \pi_3, \pi_4, \pi_5, \pi_6
+\end{pmatrix}
+\begin{pmatrix}
+ 0.1 & 0.4 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.2 & 0.3 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.1 & 0.2 & 0.3 & 0.2 & 0.1 & 0.1 \\
+ 0.1 & 0.1 & 0.2 & 0.3 & 0.2 & 0.1 \\
+ 0.1 & 0.1 & 0.1 & 0.2 & 0.3 & 0.2 \\
+ 0.1 & 0.1 & 0.1 & 0.1 & 0.4 & 0.2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\pi_1, \pi_2, \pi_3, \pi_4, \pi_5, \pi_6
+\end{pmatrix}
+$$
+
+y que $\pi_1 + \pi_2 + \pi_3 + \pi_4 + \pi_5 + \pi_6 = 1$
+
+Si llamamos I a la matriz identidad, la ecuación $\pi P = \pi$ se puede expresar como:
+
+$$\boxed{\pi (P - I) = 0}$$
+
+En este caso, la matriz $P - I$ es:
+
+$$
+P - I =
+\begin{pmatrix}
+ -0.9 & 0.4 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.2 & -0.7 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.1 & 0.2 & -0.7 & 0.2 & 0.1 & 0.1 \\
+ 0.1 & 0.1 & 0.2 & -0.7 & 0.2 & 0.1 \\
+ 0.1 & 0.1 & 0.1 & 0.2 & -0.7 & 0.2 \\
+ 0.1 & 0.1 & 0.1 & 0.1 & 0.4 & -0.8
+\end{pmatrix}
+$$
+
+Por tantos todas las filas suman 0; es fácil ver que el rango de P - I es 5.
+
+Ello significa que en el sistem $/pi (P - I) = 0$ solo hay dos ecuaciones independientes.
+
+Si nos quedamos con las dos primeras y le añadimos la condición $\pi_1 + \pi_2 + \pi_3 + \pi_4 + \pi_5 + \pi_6 = 1$, obtenemos el sistema:
+
+$$
+\begin{cases}
+-0.9 \pi_1 + 0.2 \pi_2 + 0.1 \pi_3 + 0.1 \pi_4 + 0.1 \pi_5 + 0.1 \pi_6 = 0 \\
+0.4 \pi_1 - 0.7 \pi_2 + 0.2 \pi_3 + 0.1 \pi_4 + 0.1 \pi_5 + 0.1 \pi_6 = 0 \\
+0.2 \pi_1 + 0.2 \pi_2 - 0.7 \pi_3 + 0.2 \pi_4 + 0.1 \pi_5 + 0.1 \pi_6 = 0 \\
+0.1 \pi_1 + 0.1 \pi_2 + 0.2 \pi_3 - 0.7 \pi_4 + 0.2 \pi_5 + 0.1 \pi_6 = 0 \\
+0.1 \pi_1 + 0.1 \pi_2 + 0.1 \pi_3 + 0.2 \pi_4 - 0.7 \pi_5 + 0.2 \pi_6 = 0 \\
+\pi_1 + \pi_2 + \pi_3 + \pi_4 + \pi_5 + \pi_6 = 1
+\end{cases}
+$$
+
+Expresando nuevamente el sistema de forma matricial:
+
+$$
+\begin{cases}
+-0.9 \pi_1 + 0.2 \pi_2 + 0.1 \pi_3 + 0.1 \pi_4 + 0.1 \pi_5 + 0.1 \pi_6 = 0 \\
+0.4 \pi_1 - 0.7 \pi_2 + 0.2 \pi_3 + 0.1 \pi_4 + 0.1 \pi_5 + 0.1 \pi_6 = 0 \\
+0.2 \pi_1 + 0.2 \pi_2 - 0.7 \pi_3 + 0.2 \pi_4 + 0.1 \pi_5 + 0.1 \pi_6 = 0 \\
+0.1 \pi_1 + 0.1 \pi_2 + 0.2 \pi_3 - 0.7 \pi_4 + 0.2 \pi_5 + 0.1 \pi_6 = 0 \\
+0.1 \pi_1 + 0.1 \pi_2 + 0.1 \pi_3 + 0.2 \pi_4 - 0.7 \pi_5 + 0.2 \pi_6 = 0 \\
+\pi_1 + \pi_2 + \pi_3 + \pi_4 + \pi_5 + \pi_6 = 1
+\end{cases}
+\Longrightarrow
+\begin{pmatrix}
+\pi_1, \pi_2, \pi_3, \pi_4, \pi_5, \pi_6
+\end{pmatrix}
+\begin{pmatrix}
+ -0.9 & 0.4 & 0.2 & 0.1 & 0.1 & 1\\
+ 0.2 & -0.7 & 0.2 & 0.1 & 0.1 & 1\\
+ 0.1 & 0.2 & -0.7 & 0.2 & 0.1 & 1\\
+ 0.1 & 0.1 & 0.2 & -0.7 & 0.2 & 1\\
+ 0.1 & 0.1 & 0.1 & 0.2 & -0.7 & 1\\
+ 0.1 & 0.1 & 0.1 & 0.1 & 0.2 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}0, 0, 0, 0, 0, 1\end{pmatrix}
+$$
+
+obtenemos que su solución (distribución estacionaria) es:
+$$\boxed{\pi = (0.1261, 0.1899, 0.1824, 0.1709, 0.1924, 0.1380)}$$
+
+Podemos comprobar que efectivamente, $\pi P = \pi$:
+
+$$
+\begin{pmatrix}
+0.1261, 0.1899, 0.1824, 0.1709, 0.1924, 0.1380
+\end{pmatrix}
+\begin{pmatrix}
+ 0.1 & 0.4 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.2 & 0.3 & 0.2 & 0.1 & 0.1 & 0.1 \\
+ 0.1 & 0.2 & 0.3 & 0.2 & 0.1 & 0.1 \\
+ 0.1 & 0.1 & 0.2 & 0.3 & 0.2 & 0.1 \\
+ 0.1 & 0.1 & 0.1 & 0.2 & 0.3 & 0.2 \\
+ 0.1 & 0.1 & 0.1 & 0.1 & 0.4 & 0.2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0.1261, 0.1899, 0.1824, 0.1709, 0.1924, 0.1380
+\end{pmatrix}
+$$
