@@ -34,7 +34,7 @@ Tras leer esto, queda bastante claro que se trata exactamente de una cadena de M
 La imagen de arriba no representa con exactitud el movimiento de RW, ya que debemos tener en cuenta el 15 % de probabilidad de que RW elija una página al azar.
 Podríamos conectar cada página con todas las demás del diagrama, pero sería un poco absurdo, así que simplemente reconocemos que las conexiones existen.
 
-Esto se veria como dos matrices separadas, una que representa los enlaces entre las páginas web y otra que representa la probabilidad de elegir una página al azar:
+Esto se veria como dos matrices separadas, una que representa los enlaces entre las páginas web y otra que representa la probabilidad de elegir una página al azar:  
 
 $$
 \frac{0.15}{4}
@@ -53,7 +53,7 @@ $$
 \end{bmatrix}
 $$
 
-Dando como resultado la siguiente matriz de transición:
+Dando como resultado la siguiente matriz de transición:  
 
 $$
 \begin{bmatrix}
@@ -62,11 +62,11 @@ $$
 0.4625 & 0.8875 & 0.0375 & 0.8875 \\
 0.0375 & 0.0375 & 0.8875 & 0.0375
 \end{bmatrix}
-$$
+$$  
 
 Esta matriz debe ser una matriz de transición, y además es regular porque la parte del teletransporte garantiza que todas sus entradas sean mayores que cero. Esto significa que desde cualquier página existe una probabilidad positiva de llegar a cualquier otra, lo cual cumple las condiciones del teorema de las cadenas de Markov regulares. Como resultado, la matriz posee un autovalor λ = 1 y un vector propio asociado que corresponde a una distribución de probabilidad estacionaria, es decir, un estado estable al que el sistema converge sin importar el punto de partida.
 
-El vector propio asociado a λ = 1 es:
+El vector propio asociado a λ = 1 es:  
 
 $$
 \begin{bmatrix}
@@ -75,7 +75,7 @@ $$
 0.4711 \\
 0.4379
 \end{bmatrix}
-$$
+$$  
 
 Ordenamos las páginas según la probabilidad de visita a largo plazo del navegante aleatorio, obteniendo los siguientes valores de PageRank: P1 = 0.0375, P2 = 0.0534, P3 = 0.4711 y P4 = 0.4379. Este resultado tiene sentido: P3 es la más importante porque recibe varios enlaces, P4 obtiene un valor alto ya que recibe un enlace desde P3, que es muy relevante, mientras que P1 es la menos importante porque nadie enlaza hacia ella. Por su parte, P2 solo mejora ligeramente al recibir un enlace de P1, que tiene poca influencia. A continuación, se analiza un segundo ejemplo donde una página no posee enlaces salientes.
 
