@@ -35,7 +35,7 @@ La imagen de arriba no representa con exactitud el movimiento de RW, ya que debe
 Podríamos conectar cada página con todas las demás del diagrama, pero sería un poco absurdo, así que simplemente reconocemos que las conexiones existen.
 
 Esto se veria como dos matrices separadas, una que representa los enlaces entre las páginas web y otra que representa la probabilidad de elegir una página al azar:  
-
+  
 $$
 \frac{0.15}{4}
 \begin{bmatrix}
@@ -44,7 +44,8 @@ $$
 1 & 1 & 1 & 1 \\
 1 & 1 & 1 & 1
 \end{bmatrix}
-+ 0.85
+{+}
+0.85
 \begin{bmatrix}
 0 & 0 & 0 & 0 \\
 0.5 & 0 & 0 & 0 \\
